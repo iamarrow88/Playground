@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-metanit-app';
+  title = 'My Metanit App';
+  nameUser: string = 'Jane';
+  ageUser: number = 19;
+  counter: number = 0;
+  superChange(bool: any): void {
+    if (bool) {
+      this.counter++;
+    } else {
+      this.counter--;
+    }
+  }
+
 }

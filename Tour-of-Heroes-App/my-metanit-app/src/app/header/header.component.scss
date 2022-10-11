@@ -1,0 +1,19 @@
+.nav {
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+
+  &__items {
+    width: 150px;
+    border: yellow dashed 1px;
+    list-style-type: none;
+    text-align: center;
+  }
+
+  &__links {
+    color: yellowgreen;
+    text-decoration: none;
+  }
+}
+
