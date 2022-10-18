@@ -29,4 +29,6 @@ export class AddFormComponent implements OnInit {
     this.transferringDescr.emit(this.description);
 
   }
+
+
 }

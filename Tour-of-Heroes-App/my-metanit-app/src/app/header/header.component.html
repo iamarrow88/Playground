@@ -31,5 +31,7 @@
   <p>***</p>
   <input type="text" [(ngModel)]="selectedName" placeholder="ВВедите имя" appRainbowKeyboard>
 
+  <p *ngFor="let color of colors">{{color}}</p>
+
   <h2>the header component ends</h2>
   </nav>

@@ -9,7 +9,25 @@ export class HeaderComponent implements OnInit {
   @Input() name: string = '';
   @Input() age: number = 0;
   @Input() selectedName: string = '';
-
+  colors: string[] = [
+    'red',
+    'blue',
+    'violet',
+    'yellow',
+    'yellowgreen',
+    'orange',
+    'green',
+    'pink',
+    'darksalmon',
+    'hotpink',
+    'lightskyblue',
+    'goldenrod',
+    'peachpuff',
+    'mediumspringgreen',
+    'cornflowerblue',
+    'blanchedalmond',
+    'lightslategrey'
+  ]
 
   constructor() {
     console.log(`constructor`);

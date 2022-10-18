@@ -18,5 +18,15 @@
 
   <app-temlpate-var #counter></app-temlpate-var>
   <button (click)="counter.changeCounter()">+</button>
+
+<p *ngIf="condition;else another">hello</p>
+ <ng-template #another>Another answer</ng-template>
+<button (click)="toggle()">HEllo!</button>
+
+<div [ngSwitch]="count">
+  <ng-template ngSwitchCase="1">{{count * 10}}</ng-template>
+  <ng-template ngSwitchCase="2">{{count*20}}</ng-template>
+  <ng-template ngSwitchDefault>count is {{count}}</ng-template>
+</div>
 </body>
 </html>
