@@ -6,12 +6,20 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LogoComponent } from './logo/logo.component';
 import {FormsModule} from "@angular/forms";
+import { AddFormComponent } from './add-form/add-form.component';
+import { TemlpateVarComponent } from './temlpate-var/temlpate-var.component';
+import { FontSizeDirective } from './font-size.directive';
+import { RainbowKeyboardDirective } from './rainbow-keyboard.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    LogoComponent
+    LogoComponent,
+    AddFormComponent,
+    TemlpateVarComponent,
+    FontSizeDirective,
+    RainbowKeyboardDirective
   ],
   imports: [
     BrowserModule,

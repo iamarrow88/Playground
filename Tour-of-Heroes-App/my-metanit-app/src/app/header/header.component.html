@@ -14,14 +14,22 @@
     </li>
     <p>'p' link</p>
   </ul>
-  <p>hello {{name}} from header component</p>
+  <p #pElement>hello {{name}} from header component</p>
   <p>my age is {{age}}</p>
+
+  <p appFontSize>html template {{pElement.dir}}</p>
 
   <p>***</p>
 
   <p>We have child component functions and we can watch its events</p>
-  <p>This is it: </p>
+  <p [ngClass]='{red:isRed}'>This is it: </p>
   <button type="submit" (click)="change(true)">+</button>
   <button type="submit" (click)="change(false)">-</button>
+
+  <ng-content></ng-content>
+
+  <p>***</p>
+  <input type="text" [(ngModel)]="selectedName" placeholder="ВВедите имя" appRainbowKeyboard>
+
   <h2>the header component ends</h2>
-</nav>
+  </nav>

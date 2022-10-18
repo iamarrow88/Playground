@@ -17,5 +17,11 @@ export class AppComponent {
       this.counter--;
     }
   }
+  getName(name: string) {
+    console.log(`I get the name: ${name}`)
+  }
+  getDescr(description: string) {
+    console.log(`I get the description: ${description}`)
+  }
 
 }

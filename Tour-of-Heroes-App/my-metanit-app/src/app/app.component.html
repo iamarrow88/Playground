@@ -8,11 +8,15 @@
   <title>Metanit training App</title>
 </head>
 <body>
-  <h1>main header from app component</h1>
-  <input type="text" [(ngModel)]="nameUser">
+  <h1 appFontSize>main header from app component</h1>
   <input type="text" [(ngModel)]="ageUser">
 <p>hello {{nameUser}} from app component</p>
 
-  <app-header [name]="nameUser" [age]="ageUser" (onChanged)="superChange($event)"> </app-header>
+  <app-header [name]="nameUser" [age]="ageUser" (onChanged)="superChange($event)"><p>Counter is {{counter}}</p> </app-header>
+
+  <app-add-form (transferringName)="getName($event)" (transferringDescr)="getDescr($event)"></app-add-form>
+
+  <app-temlpate-var #counter></app-temlpate-var>
+  <button (click)="counter.changeCounter()">+</button>
 </body>
 </html>

@@ -1,0 +1,17 @@
+<div class="create-new-card-block">
+  <h3 class="create-new-card-block__card-header">Create new card</h3>
+  <div class="create-new-card-block__input-wrapper">
+    <label class="create-new-card-block__label" for="title">Title</label><br>
+    <input class="create-new-card-block__input" type="text" id="title" [(ngModel)]="name"><br>
+    <label class="create-new-card-block__label" for="descr">Description</label><br>
+    <input class="create-new-card-block__input" type="text" id="descr" [(ngModel)]="description"><br>
+    <label class="create-new-card-block__label" for="img-url">Img</label><br>
+    <input class="create-new-card-block__input" type="text" id="img-url" [(ngModel)]="imgUrl"><br>
+    <label class="create-new-card-block__label" for="link-video">Link video</label><br>
+    <input class="create-new-card-block__input" type="text" id="link-video" [(ngModel)]="videoUrl"><br>
+  </div>
+
+ <div class="create-new-card-block__container">
+   <button class="create-new-card-block__btn" type="button" (click)="addName()">Create card</button>
+ </div>
+</div>
