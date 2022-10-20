@@ -127,6 +127,10 @@
     color: #FFFFFF;
     outline: none;
     box-shadow: 2px 3px 5px #2f80ed;
+
+    &:hover {
+      background-color: #5EA2FF;
+    }
   }
 }
 

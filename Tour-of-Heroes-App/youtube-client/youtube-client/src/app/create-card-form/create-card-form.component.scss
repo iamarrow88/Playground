@@ -64,5 +64,8 @@
     border: none;
     cursor: pointer;
     font-size: 15px;
+    &:hover {
+      background-color: #5EA2FF;
+    }
   }
 }
