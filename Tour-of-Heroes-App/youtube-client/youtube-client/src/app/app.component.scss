@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+.container {
+  max-width: 1440px;
+}
+
+.header {
+  position: relative;
+  height: 80px;
+  background-color: #E5E5E5;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+  }
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+
+  &__logo {
+    background: url('../assets/img/logo.svg') center center/cover no-repeat;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+  &__settings {
+    width: 50px;
+    height: 50px;
+    background: url('../assets/img/search_settings.svg') center center/cover no-repeat;
+    cursor: pointer;
+  }
+}
+
+.search_wrapper {
+  display: flex;
+  margin: 0 10px;
+
+  &__input {
+    height: 24px;
+    width: 396px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    color: #929292;
+    border: #929292;
+    outline: none;
+
+    &:focus {
+      border: #505050;
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    height: 24px;
+    width: 80px;
+    background: #2F80ED;
+    border-radius: 0px 4px 4px 0px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    align-items: center;
+    color: #FFFFFF;
+    outline: none;
+    box-shadow: 2px 3px 5px #2f80ed;
+  }
+}
+
+.auth-box {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__name {
+    margin-right: 8px;
+    color: #4F4F4F;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: right;
+  }
+
+  &__avatar {
+    height: 24px;
+    width: 24px;
+    background: url('../assets/img/login.svg') center center/cover no-repeat;
+    cursor: pointer;
+  }
+
+}

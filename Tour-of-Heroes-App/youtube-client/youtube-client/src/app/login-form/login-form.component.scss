@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+
+
+}
+.login-form {
+  width: 344px;
+  height: 248px;
+  background-color: #faf7f7;
+  padding: 28px 20px 24px;
+
+  &__header {
+    margin-bottom: 11px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.17;
+    display: flex;
+    align-items: center;
+    color: #000000;
+  }
+
+  &__line-title {
+    margin-bottom: 4px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    color: #828282;
+  }
+
+  &__input {
+    margin-bottom: 5px;
+    width: 304px;
+    height: 37px;
+    background-color: #E0E0E0;
+    border: 1px solid #E0E0E0;
+    outline: none;
+    color: #6e6e6e;
+    font-size: 20px;
+  }
+
+  &__action {
+    margin-top: 22px;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    height: 24px;
+    width: 80px;
+    background: #2F80ED;
+    border-radius: 0px 4px 4px 0px;
+    align-items: center;
+    color: #FFFFFF;
+    outline: none;
+    box-shadow: 2px 3px 5px #2f80ed;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__registration {
+    margin-right: 14px;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #2F80ED;
+  }
+
+}
+
+
+
