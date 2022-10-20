@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { CreateCardFormComponent } from './create-card-form/create-card-form.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
+import { ErrorMsgComponent } from './error-msg/error-msg.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
     RegistrationFormComponent,
-    CreateCardFormComponent
+    CreateCardFormComponent,
+    SearchResultsComponent,
+    ErrorMsgComponent
   ],
   imports: [
     BrowserModule,
