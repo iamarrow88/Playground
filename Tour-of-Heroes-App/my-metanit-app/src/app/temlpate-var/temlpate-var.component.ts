@@ -11,10 +11,5 @@ export class TemlpateVarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  counter: number = 0;
 
-  changeCounter(): void {
-    this.counter++;
-    console.log(this.counter);
-  }
 }

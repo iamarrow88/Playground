@@ -10,6 +10,7 @@ import { AddFormComponent } from './add-form/add-form.component';
 import { TemlpateVarComponent } from './temlpate-var/temlpate-var.component';
 import { FontSizeDirective } from './font-size.directive';
 import { RainbowKeyboardDirective } from './rainbow-keyboard.directive';
+import { SetColorDirective } from './set-color.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RainbowKeyboardDirective } from './rainbow-keyboard.directive';
     AddFormComponent,
     TemlpateVarComponent,
     FontSizeDirective,
-    RainbowKeyboardDirective
+    RainbowKeyboardDirective,
+    SetColorDirective
   ],
   imports: [
     BrowserModule,

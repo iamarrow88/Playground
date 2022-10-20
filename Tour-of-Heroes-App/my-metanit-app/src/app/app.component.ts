@@ -6,27 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'My Metanit App';
-  nameUser: string = 'Jane';
-  condition: boolean = false;
-  ageUser: number = 19;
-  counter: number = 0;
-  count: number = 9;
-  superChange(bool: any): void {
-    if (bool) {
-      this.counter++;
-    } else {
-      this.counter--;
+  color: string = 'green';
+
+  changeColor(): void {
+    function RGB() {
+      return Math.floor(Math.random() * 256)
     }
-  }
-  getName(name: string) {
-    console.log(`I get the name: ${name}`)
-  }
-  getDescr(description: string) {
-    console.log(`I get the description: ${description}`)
+    let newColor = [];
+    for (let i = 0; i < 3; i++) {
+      newColor.push(RGB());
+    }
+    console.log(newColor.join(','));
+    this.color = newColor.join(',');
   }
 
-  toggle() {
-    this.condition = !this.condition;
-  }
+
 }
