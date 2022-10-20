@@ -1,22 +1,32 @@
 <header class="header">
   <div class="header__container container">
 
-    <div class="header__search-box search-box">
-      <div class="search-box__logo">
+      <div class="header__search-box search-box">
+        <div class="search-box__logo">
+        </div>
+
+        <div class="search-box__wrapper search_wrapper">
+          <input class="search_wrapper__input" placeholder="What are you want to find out?">
+          <button class="search_wrapper__btn btn">Search</button>
+        </div>
+
+        <div class="search-box__settings">
+        </div>
       </div>
 
-      <div class="search-box__wrapper search_wrapper">
-        <input class="search_wrapper__input" placeholder="What are you want to find out?">
-        <button class="search_wrapper__btn btn">Search</button>
+      <div class="auth-box">
+        <div class="auth-box__name">Your Name</div>
+        <div class="auth-box__avatar"></div>
       </div>
+  </div>
 
-      <div class="search-box__settings">
-      </div>
-    </div>
-
-    <div class="auth-box">
-      <div class="auth-box__name">Your Name</div>
-      <div class="auth-box__avatar"></div>
+  <div class="header__open-settings open-settings" *ngIf="true">
+    <div class="open-settings__container container">
+      <span class="open-settings__text">Sorting by:</span>
+      <a class="open-settings__options" href="#">date</a>
+      <a class="open-settings__options" href="#">count of views</a>
+      <a class="open-settings__options" href="#">by word or sentance</a>
+      <input class="open-settings__option-input" type="text" *ngIf="true">
     </div>
   </div>
 

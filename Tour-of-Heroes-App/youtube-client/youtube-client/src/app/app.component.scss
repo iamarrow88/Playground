@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+}
 
 .container {
   max-width: 1440px;
@@ -14,13 +24,46 @@
   &__container {
     display: flex;
     justify-content: center;
-    padding: 15px 0;
+    padding: 14px 0;
   }
 }
+.open-settings {
+  height: 50px;
+  background-color: #E5E5E5;
+  &__container {
+    margin: 0 auto;
+    padding: 18px 0;
+    max-width: 570px;
+  }
 
+  &__text {
+    color: #929292;
+    margin-right: 11px;
+  }
+
+  &__options {
+    margin-right: 21px;
+    color: #2F80ED;
+    &:visited {
+      color: #2F80ED;
+    }
+    &:nth-child(4) {
+      margin-right: 10px;
+    }
+  }
+
+  &__option-input {
+    width: 149px;
+    height: 13px;
+    background-color: #FFF;
+    border: 1px solid #FFF;
+    outline: none;
+  }
+}
 .search-box {
   display: flex;
   align-items: center;
+  justify-items: center;
 
   &__logo {
     background: url('../assets/img/logo.svg') center center/cover no-repeat;
@@ -36,6 +79,7 @@
     cursor: pointer;
   }
 }
+
 
 .search_wrapper {
   display: flex;
