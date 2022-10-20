@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.error-msg {
+  display: flex;
+  gap: 26px;
+
+  &__icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  &__txt {
+    width: 233px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: #828282;
+  }
+}
