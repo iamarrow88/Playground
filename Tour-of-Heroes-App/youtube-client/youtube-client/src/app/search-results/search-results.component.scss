@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+.search-result {
+  &__container {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 29px;
+    max-width: 1200px;
+  }
+}
+
+.item {
+  padding: 20px 20px 15px;
+  width: 263px;
+  height: 327px;
+  background-color: #E5E5E5;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px #505050;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: .3s;
+  }
+
+  &__main-img {
+    margin: 0 auto;
+    margin-bottom: 21px;
+    display: block;
+    width: 223px;
+    height: 123px;
+  }
+
+  &__name {
+    margin-bottom: 60px;
+    text-align: right;
+  }
+
+  &__btn {
+    margin: 0 auto;
+    padding-top: 6px;
+    display: block;
+    width: 120px;
+    height: 32px;
+    background: #2F80ED;
+    border-radius: 4px;
+    align-items: center;
+    color: #FFF;
+    box-shadow: 2px 3px 5px #2f80ed;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+  }
+}
+
+.activity {
+  margin: 0 auto;
+  margin-bottom: 21px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 202px;
+  height: 13px;
+
+  &__block {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+  }
+}
