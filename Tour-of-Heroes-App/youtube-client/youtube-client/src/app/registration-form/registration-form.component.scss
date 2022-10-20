@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -6,38 +5,36 @@
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 1.17;
-
-
+  font-size: 10px;
+  line-height: 1.2;
 }
-.login-form {
+
+.registration-form {
   margin: 0 auto;
-  padding: 28px 20px 24px;
+  padding: 30px 20px 26px;
   width: 344px;
-  height: 248px;
+  height: 392px;
   background-color: #faf7f7;
 
   &__header {
-    margin-bottom: 11px;
+    margin-bottom: 22px;
     font-weight: 700;
     font-size: 18px;
+    line-height: 21px;
     text-align: center;
     color: #000000;
   }
 
   &__line-title {
-    margin-bottom: 4px;
-    font-size: 10px;
-    display: flex;
-    align-items: center;
+    display: block;
+    margin-bottom: 3px;
     color: #828282;
   }
 
   &__input {
-    margin-bottom: 5px;
+    margin-bottom: 12px;
     width: 304px;
-    height: 37px;
+    height: 35.58px;
     background-color: #E0E0E0;
     border: 1px solid #E0E0E0;
     outline: none;
@@ -46,12 +43,10 @@
   }
 
   &__action {
-    margin-top: 22px;
-    width: 100%;
+    margin-top: 26px;
     display: flex;
     justify-content: right;
   }
-
   &__btn {
     display: flex;
     justify-content: center;
@@ -68,7 +63,7 @@
     cursor: pointer;
   }
 
-  &__registration {
+  &__link {
     margin-right: 14px;
     font-style: normal;
     display: flex;
@@ -77,8 +72,4 @@
     text-decoration-line: underline;
     color: #2F80ED;
   }
-
 }
-
-
-
