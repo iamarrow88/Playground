@@ -10,17 +10,17 @@
           <button class="search_wrapper__btn btn">Search</button>
         </div>
 
-        <div class="search-box__settings">
+        <div class="search-box__settings" (click)="openSettings()">
         </div>
       </div>
 
       <div class="auth-box">
         <div class="auth-box__name">Your Name</div>
-        <div class="auth-box__avatar"></div>
+        <div class="auth-box__avatar" (click)="openLoginBlock()"></div>
       </div>
   </div>
 
-  <div class="header__open-settings open-settings" *ngIf="true">
+  <div class="header__open-settings open-settings" *ngIf="isSettingsOpen">
     <div class="open-settings__container container">
       <span class="open-settings__text">Sorting by:</span>
       <a class="open-settings__options" href="#">date</a>
@@ -31,7 +31,7 @@
   </div>
 
   <div class="container">
-
+    <app-login-form *ngIf="isLoginBlockOpen" (change)="openRegistrationForm()"></app-login-form>
     <app-registration-form *ngIf="isRegistrationFormOpen"></app-registration-form>
   </div>
 </header>

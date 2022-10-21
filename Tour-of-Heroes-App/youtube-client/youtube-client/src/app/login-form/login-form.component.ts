@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-login-form',
@@ -10,6 +10,12 @@ export class LoginFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  @Output() openRegistrationForm = new EventEmitter();
+  change() {
+    console.log('change() is working')
+    this.openRegistrationForm.emit();
   }
 
 }

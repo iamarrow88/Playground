@@ -6,7 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'youtube-client';
+  isSettingsOpen: boolean = false;
+  isLoginBlockOpen: boolean = false;
+  isRegistrationFormOpen: boolean = false;
+
+
+  openSettings() {
+    this.isSettingsOpen = !this.isSettingsOpen;
+  }
+
+  openLoginBlock() {
+    this.isLoginBlockOpen = !this.isLoginBlockOpen;
+    if (this.isRegistrationFormOpen) this.isRegistrationFormOpen = !this.isRegistrationFormOpen;
+    console.log('isLoginBlockOpen ' + this.isLoginBlockOpen);
+    console.log('isRegistrationFormOpen ' + this.isRegistrationFormOpen);
+  }
+
   openRegistrationForm() {
     console.log('openRegistrationForm() is working')
 
