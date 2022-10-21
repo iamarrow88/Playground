@@ -8,6 +8,7 @@ import { RegistrationFormComponent } from './registration-form/registration-form
 import { CreateCardFormComponent } from './create-card-form/create-card-form.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { ErrorMsgComponent } from './error-msg/error-msg.component';
+import { VideoInfoCardComponent } from './video-info-card/video-info-card.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ErrorMsgComponent } from './error-msg/error-msg.component';
     RegistrationFormComponent,
     CreateCardFormComponent,
     SearchResultsComponent,
-    ErrorMsgComponent
+    ErrorMsgComponent,
+    VideoInfoCardComponent
   ],
   imports: [
     BrowserModule,
