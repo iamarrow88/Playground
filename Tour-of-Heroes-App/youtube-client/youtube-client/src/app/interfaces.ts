@@ -1,4 +1,6 @@
 export interface youTubeResponse {
+  "kind": string,
+  "etag": string,
   "pageInfo": {
     "totalResults": number,
     "resultsPerPage": number
@@ -6,8 +8,18 @@ export interface youTubeResponse {
   "items": videoItem[]
 }
 export interface videoItem {
+  "kind": string,
+  "etag": string,
   "id": string,
   "snippet": {
+    "categoryId": string,
+    "liveBroadcastContent": string,
+    "localized": {
+      "title": string,
+      "description": string
+    },
+    "defaultAudioLanguage": string,
+    "defaultLanguage"?: string,
     "publishedAt": string,
     "channelId": string,
     "title": string,
