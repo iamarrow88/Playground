@@ -18,12 +18,9 @@ export class AppComponent {
   openLoginBlock() {
     this.isLoginBlockOpen = !this.isLoginBlockOpen;
     if (this.isRegistrationFormOpen) this.isRegistrationFormOpen = !this.isRegistrationFormOpen;
-    console.log('isLoginBlockOpen ' + this.isLoginBlockOpen);
-    console.log('isRegistrationFormOpen ' + this.isRegistrationFormOpen);
   }
 
   openRegistrationForm() {
-    console.log('openRegistrationForm() is working')
     this.isRegistrationFormOpen = !this.isRegistrationFormOpen;
     if (this.isLoginBlockOpen) this.isLoginBlockOpen = !this.isLoginBlockOpen;
   }

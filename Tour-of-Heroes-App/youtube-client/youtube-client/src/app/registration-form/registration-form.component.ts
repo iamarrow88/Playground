@@ -14,11 +14,6 @@ export class RegistrationFormComponent implements OnInit {
 
   @Output() openLoginForm = new EventEmitter();
   changeReg() {
-    console.log('changeReg() is working')
     this.openLoginForm.emit();
-  }
-
-  pick() {
-    console.log('pick')
   }
 }
