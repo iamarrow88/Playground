@@ -14,8 +14,7 @@ export class LoginFormComponent implements OnInit {
 
   @Output() openRegistrationForm = new EventEmitter();
   change() {
-    console.log('change() is working')
+    /*console.log('change() is working')*/
     this.openRegistrationForm.emit();
   }
-
 }

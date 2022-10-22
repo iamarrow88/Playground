@@ -24,10 +24,7 @@ export class AppComponent {
 
   openRegistrationForm() {
     console.log('openRegistrationForm() is working')
-
-      console.log('It was passed condition')
-      this.isRegistrationFormOpen = !this.isRegistrationFormOpen;
-      if (this.isLoginBlockOpen) this.isLoginBlockOpen = !this.isLoginBlockOpen;
-
+    this.isRegistrationFormOpen = !this.isRegistrationFormOpen;
+    if (this.isLoginBlockOpen) this.isLoginBlockOpen = !this.isLoginBlockOpen;
   }
 }

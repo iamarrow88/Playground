@@ -31,7 +31,7 @@
   </div>
 
   <div class="container">
-    <app-login-form *ngIf="isLoginBlockOpen" (change)="openRegistrationForm()"></app-login-form>
-    <app-registration-form *ngIf="isRegistrationFormOpen"></app-registration-form>
+    <app-login-form *ngIf="isLoginBlockOpen" (openRegistrationForm)="openRegistrationForm()"></app-login-form>
+    <app-registration-form *ngIf="isRegistrationFormOpen" (openLoginForm)="openLoginBlock()"></app-registration-form>
   </div>
 </header>
