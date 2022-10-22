@@ -9,7 +9,7 @@ export class AppComponent {
   isSettingsOpen: boolean = false;
   isLoginBlockOpen: boolean = false;
   isRegistrationFormOpen: boolean = false;
-
+  searchKey: string = '';
 
   openSettings() {
     this.isSettingsOpen = !this.isSettingsOpen;

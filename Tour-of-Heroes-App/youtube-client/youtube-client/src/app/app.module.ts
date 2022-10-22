@@ -9,6 +9,7 @@ import { CreateCardFormComponent } from './create-card-form/create-card-form.com
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { ErrorMsgComponent } from './error-msg/error-msg.component';
 import { VideoInfoCardComponent } from './video-info-card/video-info-card.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,10 +21,11 @@ import { VideoInfoCardComponent } from './video-info-card/video-info-card.compon
     ErrorMsgComponent,
     VideoInfoCardComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

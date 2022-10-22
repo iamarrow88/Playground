@@ -6,7 +6,7 @@
         </div>
 
         <div class="search-box__wrapper search_wrapper">
-          <input class="search_wrapper__input" placeholder="What are you want to find out?">
+          <input class="search_wrapper__input" placeholder="What are you want to find out?" [(ngModel)]="searchKey">
           <button class="search_wrapper__btn btn">Search</button>
         </div>
 
@@ -29,6 +29,8 @@
       <input class="open-settings__option-input" type="text" *ngIf="true">
     </div>
   </div>
+
+  <div>{{searchKey}}</div>
 
   <div class="container">
     <app-login-form *ngIf="isLoginBlockOpen" (openRegistrationForm)="openRegistrationForm()"></app-login-form>
