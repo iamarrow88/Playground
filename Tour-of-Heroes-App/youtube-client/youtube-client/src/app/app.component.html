@@ -7,7 +7,7 @@
 
         <div class="search-box__wrapper search_wrapper">
           <input class="search_wrapper__input" placeholder="What are you want to find out?" [(ngModel)]="searchKey">
-          <button class="search_wrapper__btn btn">Search</button>
+          <button class="search_wrapper__btn btn" (click)="showSearchResults()">Search</button>
         </div>
 
         <div class="search-box__settings" (click)="openSettings()">
@@ -36,6 +36,6 @@
     <app-login-form *ngIf="isLoginBlockOpen" (openRegistrationForm)="openRegistrationForm()"></app-login-form>
     <app-registration-form *ngIf="isRegistrationFormOpen" (openLoginForm)="openLoginBlock()"></app-registration-form>
 
-    <app-search-results></app-search-results>
+    <app-search-results *ngIf="searchResultsIsOpen"></app-search-results>
   </div>
 </header>

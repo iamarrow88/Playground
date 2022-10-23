@@ -10,6 +10,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { ErrorMsgComponent } from './error-msg/error-msg.component';
 import { VideoInfoCardComponent } from './video-info-card/video-info-card.component';
 import {FormsModule} from "@angular/forms";
+import { ColorLineItemsDirective } from './color-line-items.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {FormsModule} from "@angular/forms";
     CreateCardFormComponent,
     SearchResultsComponent,
     ErrorMsgComponent,
-    VideoInfoCardComponent
+    VideoInfoCardComponent,
+    ColorLineItemsDirective
   ],
     imports: [
         BrowserModule,
