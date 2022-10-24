@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   color: string = 'green';
 
-  changeColor(): void {
+  /*changeColor(): void {
     function RGB() {
       return Math.floor(Math.random() * 256)
     }
@@ -18,7 +18,7 @@ export class AppComponent {
     }
     console.log(newColor.join(','));
     this.color = newColor.join(',');
-  }
+  }*/
 
 
 }
