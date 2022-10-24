@@ -10,10 +10,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { ErrorMsgComponent } from './error-msg/error-msg.component';
 import { VideoInfoCardComponent } from './video-info-card/video-info-card.component';
 import {FormsModule} from "@angular/forms";
-import { ColorLineRedDirective } from './color-line-red.directive';
-import { ColorLineYellowDirective } from './color-line-yellow.directive';
-import { ColorLineGreenDirective } from './color-line-green.directive';
-import { ColorLineBlueDirective } from './color-line-blue.directive';
+import { ColorLineDirective } from './color-line.directive';
 
 @NgModule({
   declarations: [
@@ -24,10 +21,7 @@ import { ColorLineBlueDirective } from './color-line-blue.directive';
     SearchResultsComponent,
     ErrorMsgComponent,
     VideoInfoCardComponent,
-    ColorLineRedDirective,
-    ColorLineYellowDirective,
-    ColorLineGreenDirective,
-    ColorLineBlueDirective
+    ColorLineDirective
   ],
     imports: [
         BrowserModule,

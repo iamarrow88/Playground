@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck, OnChanges, AfterContentInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {youTubeResponse} from "../interfaces";
 
 @Component({
@@ -11,27 +11,6 @@ export class SearchResultsComponent implements OnInit {
   constructor() { }
   ngOnInit(): void {
   }
-  /*
-  ngDoCheck() {
-    console.log('Do Check');
-  }
-
-  ngOnChanges() {
-    console.log("on changes");
-  }
-
-  ngAfterContentInit() {
-    console.log("AfterContentInit")
-  }
-
-  ngAfterViewInit() {
-    console.log('AfterViewInit');
-  }
-
-  ngAfterViewChecked() {
-    console.log('AfterViewChecked');
-  }*/
-
   data: youTubeResponse = {
     "kind": "youtube#videoListResponse",
     "etag": "\"Fznwjl6JEQdo1MGvHOGaz_YanRU/Cmodw7c5XPTM8Yg3kMXelihxek4\"",
@@ -45,7 +24,7 @@ export class SearchResultsComponent implements OnInit {
         "etag": "\"Fznwjl6JEQdo1MGvHOGaz_YanRU/tmmI1yiRrmLWlKikXk1gD3TXsUI\"",
         "id": "YN8zNnV0sK8",
         "snippet": {
-          "publishedAt": "2019-05-30T12:42:19.000Z",
+          "publishedAt": "2022-05-30T12:42:19.000Z",
           "channelId": "UCg8ss4xW9jASrqWGP30jXiw",
           "title": "Angular 8 - Быстрый курс за 60 минут",
           "description": "Полный курс по Angular 8+:\nhttps://clc.to/angular\n\nTelegram: https://teleg.one/js_by_vladilen \nInstagram: https://www.instagram.com/vladilen.minin \nVK: https://vk.com/vladilen.minin \nГруппа VK: https://vk.com/js_by_vladilen \n\nReact Native: мобильная разработка на JavaScript:\nhttps://clc.to/rnative\n\nПоддержать выпуск новых видео:\nЯД: https://money.yandex.ru/to/410013757655670\nPayPal: https://www.paypal.me/vladilenm \n\n30 мая 2019 года бы релиз Angular 8 и я решил записать  по нему быстрый курс. В видео вы узнаете, как Angular работает, как его установить.\nВ результате урока я покажу создание Todo приложения с разными подходами. Разберем работу с сервером, сервисами, пайпами, коммуникацией между компонентами и немного RxJS\n\nИсходный код:\nhttps://github.com/vladilenm/angular8-cc\n\nAngular 8 - Быстрый курс за 60 минут",
@@ -125,7 +104,7 @@ export class SearchResultsComponent implements OnInit {
         "etag": "\"Fznwjl6JEQdo1MGvHOGaz_YanRU/uto79F2R8W05GFpiUAcLdFGs7PQ\"",
         "id": "Fdf5aTYRW0E",
         "snippet": {
-          "publishedAt": "2019-01-23T17:46:58.000Z",
+          "publishedAt": "2022-10-23T17:46:58.000Z",
           "channelId": "UC29ju8bIPH5as8OGnQzwJyA",
           "title": "Angular Crash Course",
           "description": "In this video we will talk about what Angular is and then jump in and build a small app With Angular 7, looking at most of the fundamental concepts like components, services, modules, etc\n\nSponsor:\nhttp://www.netlify.com\n\nCode:\nhttps://github.com/bradtraversy/angular-crash-todolist\n\n💖 Become a Patron: Show support & get perks!\nhttp://www.patreon.com/traversymedia\n\nWebsite & Udemy Courses\nhttp://www.traversymedia.com\n\nFollow Traversy Media:\nhttps://www.facebook.com/traversymedia\nhttps://www.twitter.com/traversymedia\nhttps://www.instagram.com/traversymedia",
@@ -785,23 +764,4 @@ export class SearchResultsComponent implements OnInit {
     ]
   }
 
-  findTimeDiff(publishedAt: string) {
-    const publishingDateMs = new Date(publishedAt).getTime();
-    const currentDateMs = new Date().getTime();
-
-    const difference = currentDateMs - publishingDateMs;
-
-    const sevenDays = 604800000;
-    const oneMonth = 2629800000;
-    const halfYear = 15778800000;
-    if (difference >= halfYear) {
-      return 'red';
-    } else if (difference >= oneMonth) {
-      return 'yellow';
-    } else if (difference >= sevenDays) {
-      return 'green';
-    } else {
-      return 'blue';
-    }
-  }
 }

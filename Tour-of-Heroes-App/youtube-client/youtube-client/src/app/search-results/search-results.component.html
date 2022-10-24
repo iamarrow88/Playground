@@ -1,7 +1,7 @@
 <div class="search-result">
   <div class="search-result__container container">
     <div *ngFor="let item of data.items" class="search-result__item item">
-      <img class="item__main-img" src="{{item.snippet.thumbnails.default.url}}" alt="template">
+      <img class="item__main-img" src="{{item.snippet.thumbnails.high.url}}" alt="template">
 
       <div class="item__activity activity">
         <div class="activity__block">
@@ -26,7 +26,7 @@
 
       <a class="item__btn" href="#">more...</a>
 
-      <div class="search-result__color-line" [ngClass]="findTimeDiff(item.snippet.publishedAt)"></div>
+      <div class="search-result__color-line" appColorLine [lineColor]="item.snippet.publishedAt"></div>
     </div>
 
   </div>
