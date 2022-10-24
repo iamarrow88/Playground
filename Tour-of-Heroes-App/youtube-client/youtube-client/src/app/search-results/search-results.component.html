@@ -26,7 +26,8 @@
 
       <a class="item__btn" href="#">more...</a>
 
-      <div class="search-result__color-line"></div>
+      <div class="search-result__color-line" [ngClass]="findTimeDiff(item.snippet.publishedAt)"></div>
     </div>
+
   </div>
 </div>

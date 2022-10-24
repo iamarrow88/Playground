@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck, OnChanges, AfterContentInit } from '@angular/core';
 import {youTubeResponse} from "../interfaces";
 
 @Component({
@@ -9,10 +9,28 @@ import {youTubeResponse} from "../interfaces";
 export class SearchResultsComponent implements OnInit {
 
   constructor() { }
-
   ngOnInit(): void {
   }
+  /*
+  ngDoCheck() {
+    console.log('Do Check');
+  }
 
+  ngOnChanges() {
+    console.log("on changes");
+  }
+
+  ngAfterContentInit() {
+    console.log("AfterContentInit")
+  }
+
+  ngAfterViewInit() {
+    console.log('AfterViewInit');
+  }
+
+  ngAfterViewChecked() {
+    console.log('AfterViewChecked');
+  }*/
 
   data: youTubeResponse = {
     "kind": "youtube#videoListResponse",
@@ -767,4 +785,23 @@ export class SearchResultsComponent implements OnInit {
     ]
   }
 
+  findTimeDiff(publishedAt: string) {
+    const publishingDateMs = new Date(publishedAt).getTime();
+    const currentDateMs = new Date().getTime();
+
+    const difference = currentDateMs - publishingDateMs;
+
+    const sevenDays = 604800000;
+    const oneMonth = 2629800000;
+    const halfYear = 15778800000;
+    if (difference >= halfYear) {
+      return 'red';
+    } else if (difference >= oneMonth) {
+      return 'yellow';
+    } else if (difference >= sevenDays) {
+      return 'green';
+    } else {
+      return 'blue';
+    }
+  }
 }
