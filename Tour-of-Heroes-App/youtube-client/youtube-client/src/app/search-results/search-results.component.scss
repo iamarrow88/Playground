@@ -11,7 +11,7 @@
     margin-top: 5vh;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 29px;
     max-width: 1200px;
   }
@@ -20,7 +20,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 263px;
+    width: 234px;
     height: 5px;
     border-radius: 0px 0px 5px 5px;
   }
@@ -28,9 +28,12 @@
 
 .item {
   position: relative;
-  padding: 20px 20px 15px;
-  width: 263px;
-  height: 327px;
+  padding: 20px 14px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 234px;
+  height: 336px;
   background-color: #E5E5E5;
   border-radius: 5px;
   box-shadow: 2px 2px 10px #505050;
@@ -46,11 +49,11 @@
     margin-bottom: 21px;
     display: block;
     width: 205px;
-    height: 123px;
+    height: 142px;
   }
 
   &__name {
-    margin-bottom: 60px;
+    margin-bottom: 34px;
     text-align: right;
   }
 
@@ -92,3 +95,4 @@
     gap: 3px;
   }
 }
+

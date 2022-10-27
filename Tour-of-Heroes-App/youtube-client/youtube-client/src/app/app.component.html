@@ -6,7 +6,7 @@
         </div>
 
         <div class="search-box__wrapper search_wrapper">
-          <input class="search_wrapper__input" placeholder="What are you want to find out?" [(ngModel)]="searchKey">
+          <input class="search_wrapper__input" placeholder="What are you want to find out?" [(ngModel)]="mainSearchKey">
           <button class="search_wrapper__btn btn" (click)="showSearchResults()">Search</button>
         </div>
 
@@ -23,19 +23,19 @@
   <div class="header__open-settings open-settings" *ngIf="isSettingsOpen">
     <div class="open-settings__container container">
       <span class="open-settings__text">Sorting by:</span>
-      <a class="open-settings__options" href="#">date</a>
-      <a class="open-settings__options" href="#">count of views</a>
-      <a class="open-settings__options" href="#">by word or sentance</a>
-      <input class="open-settings__option-input" type="text" *ngIf="true">
+      <a class="open-settings__options" href="#" (click)="sortByDate($event)">date</a>
+      <a class="open-settings__options" href="#" (click)="sortByViews($event)">count of views</a>
+      <a class="open-settings__options" href="#" (click)="activeSortLink($event)">by word or sentance</a>
+      <input class="open-settings__option-input" type="text" *ngIf="true" [(ngModel)]="subSearchKey" (input)="sortByKeyWords()">
     </div>
   </div>
 
-  <div>{{searchKey}}</div>
+  <div>{{mainSearchKey}}</div>
 
   <div class="container">
     <app-login-form *ngIf="isLoginBlockOpen" (openRegistrationForm)="openRegistrationForm()"></app-login-form>
     <app-registration-form *ngIf="isRegistrationFormOpen" (openLoginForm)="openLoginBlock()"></app-registration-form>
 
-    <app-search-results *ngIf="searchResultsIsOpen"></app-search-results>
+    <app-search-results *ngIf="searchResultsIsOpen" [isSettingsOpen]="isSettingsOpen" [mainSearchKey]="mainSearchKey" [searchWay]="searchWay" [isAscending]="isAscending"></app-search-results>
   </div>
 </header>

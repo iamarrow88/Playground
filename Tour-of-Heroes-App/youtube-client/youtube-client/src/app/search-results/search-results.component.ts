@@ -1,16 +1,20 @@
-import { Component, OnInit} from '@angular/core';
-import {youTubeResponse} from "../interfaces";
+import { Component, Input } from '@angular/core';
+import {youTubeResponse} from "../../models/interfaces";
 
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.scss']
 })
-export class SearchResultsComponent implements OnInit {
+export class SearchResultsComponent {
+  @Input() mainSearchKey: string = '';
+  @Input() searchWay: string = '';
+  @Input() isAscending: boolean = false;
+  @Input() isSettingsOpen: boolean = false;
 
-  constructor() { }
-  ngOnInit(): void {
+  constructor() {
   }
+
   data: youTubeResponse = {
     "kind": "youtube#videoListResponse",
     "etag": "\"Fznwjl6JEQdo1MGvHOGaz_YanRU/Cmodw7c5XPTM8Yg3kMXelihxek4\"",
@@ -243,7 +247,7 @@ export class SearchResultsComponent implements OnInit {
         "etag": "\"Fznwjl6JEQdo1MGvHOGaz_YanRU/cDwx4Ds5-J9CmiqmazUetzrLZKY\"",
         "id": "Rf54BH35yrY",
         "snippet": {
-          "publishedAt": "2019-09-04T15:00:12.000Z",
+          "publishedAt": "2022-09-04T15:00:12.000Z",
           "channelId": "UCg8ss4xW9jASrqWGP30jXiw",
           "title": "Angular 8 Основы. Полный Курс для начинающих",
           "description": "Полный курс по Angular 8+:\nhttps://clc.to/angular\n\nДобавляйте меня в ВК: https://vk.com/vladilen.minin\nTelegram: https://teleg.one/js_by_vladilen\nInstagram: https://www.instagram.com/vladilen.minin\nГруппа ВК: https://vk.com/js_by_vladilen\n\nПоддержать выпуск новых видео:\nЯД: https://money.yandex.ru/to/410013757655670\nPayPal: https://www.paypal.me/vladilenm \n\nУрок по Angular. В этом курсе вы познакомитесь со всеми основными элементами, которые есть в Angular с полного нуля\n\nAngular 8 Основы. Полный Курс. Урок для Новичков",
@@ -322,7 +326,7 @@ export class SearchResultsComponent implements OnInit {
         "etag": "\"Fznwjl6JEQdo1MGvHOGaz_YanRU/_99tEunMszVYvCj2-1aUTKgOoSY\"",
         "id": "m0yGx2MGZWg",
         "snippet": {
-          "publishedAt": "2018-05-13T07:44:08.000Z",
+          "publishedAt": "2022-05-13T07:44:08.000Z",
           "channelId": "UCe_H8hzx9WV7Ca7Ps5gt72Q",
           "title": "Что такое Angular. Обзор возможностей",
           "description": "В этом видео речь пойдет про javascript фреймворк Angular. Я расскажу что такое Angular, где и когда его применяют, а так же сделаю небольшой обзор его возможностей. Расскажу чем фреймворк сложен для новичков и чем он действительно хорош для новых проектов. Сейчас для того что б стать junior javascript разработчиком нужно обязательно знать хотя бы один фреймворк js и ангуляр будет отличным выбором.",
@@ -396,7 +400,7 @@ export class SearchResultsComponent implements OnInit {
         "etag": "\"Fznwjl6JEQdo1MGvHOGaz_YanRU/GuGydXnkvpl-L4ntYhAaLNiseZ4\"",
         "id": "VAkio68d51A",
         "snippet": {
-          "publishedAt": "2019-02-25T00:09:23.000Z",
+          "publishedAt": "2022-02-25T00:09:23.000Z",
           "channelId": "UCZ9qFEC82qM6Pk-54Q4TVWA",
           "title": "What is Angular? (Explained for Beginners)",
           "description": "When you're just starting out you are probably wondering \"What is Angular exactly? When you ask that question it leads to a lot of concepts that are over your head and don't make sense. So in this video I really want to cover what exactly Angular is and why it's even necessary... all from a beginners point of view.\n\n*** DOWNLOAD THE FREE REPORT ***\nFor my free report on the five best programming languages in 2019 (for beginners) go to: https://andysterkowitz.com/report",
@@ -474,7 +478,7 @@ export class SearchResultsComponent implements OnInit {
         "etag": "\"Fznwjl6JEQdo1MGvHOGaz_YanRU/u2qq5ltpXouoIrpkJgGLu8YOIeg\"",
         "id": "u1VCxpvDgsk",
         "snippet": {
-          "publishedAt": "2018-12-01T15:00:05.000Z",
+          "publishedAt": "2022-10-01T15:00:05.000Z",
           "channelId": "UCvuY904el7JvBlPbdqbfguw",
           "title": "Уроки Angular для начинающих / #1 - Введение в Angular",
           "description": "Приступаем к изучению библиотеки Angular. В ходе курса мы создадим небольшой сайт и научимся всем основным концепциям библиотеки Angular. Мы рассмотрим события, компоненты, создание форм и многое другое, чтобы вы в дальнейшем сами могли создавать веб сайты на Angular.\n\n1) Курс на сайте itProger: https://itproger.com/course/angular\n2) Node JS: https://nodejs.org/\n3) Редактор кода: https://atom.io/\n4) Angular CLI: https://cli.angular.io/\n\n✔ Сообщество программистов: https://itproger.com/\n\n✔ -------------\nВступай в группу Вк - https://vk.com/prog_life 🚀\nГруппа FaceBook - https://goo.gl/XW0aaP\n\nInstagram: https://www.instagram.com/gosha_dudar/\nTelegram: http://t.me/itProger_official\nTwitter - https://twitter.com/GoshaDudar\n\n- Уроки от #GoshaDudar 👨🏼\u200d💻\n- Все уроки по хештегу #goshaAngular",
@@ -543,7 +547,7 @@ export class SearchResultsComponent implements OnInit {
         "etag": "\"Fznwjl6JEQdo1MGvHOGaz_YanRU/96JEWzuOaAgaHrcnKhmatlZzPME\"",
         "id": "rc3E4tplFCU",
         "snippet": {
-          "publishedAt": "2019-10-29T15:00:14.000Z",
+          "publishedAt": "2022-10-25T15:00:14.000Z",
           "channelId": "UCg8ss4xW9jASrqWGP30jXiw",
           "title": "Angular 40 вопросов для собеседования",
           "description": "Полный курс по Angular 8+:\nhttps://clc.to/angular\n\nДобавляйте меня в ВК: https://vk.com/vladilen.minin\nГруппа ВК: https://vk.com/js_by_vladilen\nTelegram: https://teleg.one/js_by_vladilen\nInstagram: https://www.instagram.com/vladilen.minin\n\nПоддержать выпуск новых видео:\nЯД: https://money.yandex.ru/to/410013757655670\nPayPal: https://www.paypal.me/vladilenm \n\nAngular 40 вопросов для собеседования. Подготовка к интервью",
@@ -619,7 +623,7 @@ export class SearchResultsComponent implements OnInit {
         "etag": "\"Fznwjl6JEQdo1MGvHOGaz_YanRU/pvVvPt5cchXjCoSYxodr18lOaEg\"",
         "id": "NaZwVUHnmfE",
         "snippet": {
-          "publishedAt": "2019-06-19T16:06:13.000Z",
+          "publishedAt": "2022-10-19T16:06:13.000Z",
           "channelId": "UCg8ss4xW9jASrqWGP30jXiw",
           "title": "Angular 8 + RxJS. Приложение Органайзер С Нуля (Для Опытных!)",
           "description": "Курс по Angular 8+: \nhttps://clc.to/angular \n\nДобавляйте меня в ВК: https://vk.com/vladilen.minin\nTelegram: https://teleg.one/js_by_vladilen\nInstagram: https://www.instagram.com/vladilen.minin\nГруппа ВК: https://vk.com/js_by_vladilen\n\nПоддержать выпуск новых видео:\nЯД: https://money.yandex.ru/to/410013757655670\nPayPal: https://www.paypal.me/vladilenm \n\nВ видео я покажу разработку приложения органайзера с нуля.\nВ видео я не буду пояснять базовые моменты, так как это практика для опытных разработчиков\n\nВ результате вы получите приложение, в котором будет использоваться много RxJS, Firebase, MomentJS и Angular 8\nНе будет никаких CSS фреймворков - все стили будут написаны с нуля с использованием CSS переменных\n\nИсходный код:\nhttps://github.com/vladilenm/angular-organizer\n\nAngular 8 + RxJS. Приложение Целиком (Для Опытных!)\nhttps://youtu.be/NaZwVUHnmfE",
@@ -698,7 +702,7 @@ export class SearchResultsComponent implements OnInit {
         "etag": "\"Fznwjl6JEQdo1MGvHOGaz_YanRU/KuFm1jGNMzgjE2VlAEsPgRVra4o\"",
         "id": "G0bBLvWXBvc",
         "snippet": {
-          "publishedAt": "2019-09-16T16:53:41.000Z",
+          "publishedAt": "2022-09-16T16:53:41.000Z",
           "channelId": "UCsBjURrPoezykLs9EqgamOA",
           "title": "Angular for Beginners - Let's build a Tic-Tac-Toe PWA",
           "description": "Learn the basics of Angular 8 🚀 by building a tic-tac-toe game 🕹️ from scratch...Then deploy it as an installable progressive web app (PWA). Go beyond the basics 👉https://fireship.io/courses/angular/\n\nFull Source Code: https://github.com/fireship-io/angular-tic-tac-toe\nAngular Docs: https://angular.io/\n\n#angular #pwa #tutorial\n\nTake Angular quizzes 🤓\n\niOS https://itunes.apple.com/us/app/fireship/id1462592372?mt=8\nAndroid https://play.google.com/store/apps/details?id=io.fireship.quizapp\n\nUpgrade to Fireship PRO at https://fireship.io/pro\nUse code lORhwXd2 for 25% off your first payment.",

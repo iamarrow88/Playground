@@ -11,6 +11,7 @@ import { ErrorMsgComponent } from './error-msg/error-msg.component';
 import { VideoInfoCardComponent } from './video-info-card/video-info-card.component';
 import {FormsModule} from "@angular/forms";
 import { ColorLineDirective } from './color-line.directive';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ColorLineDirective } from './color-line.directive';
     SearchResultsComponent,
     ErrorMsgComponent,
     VideoInfoCardComponent,
-    ColorLineDirective
+    ColorLineDirective,
+    SearchPipe
   ],
     imports: [
         BrowserModule,

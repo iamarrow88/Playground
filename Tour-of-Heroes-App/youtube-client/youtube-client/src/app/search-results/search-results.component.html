@@ -1,6 +1,6 @@
 <div class="search-result">
   <div class="search-result__container container">
-    <div *ngFor="let item of data.items" class="search-result__item item">
+    <div *ngFor="let item of data.items | search:isSettingsOpen:mainSearchKey:searchWay:isAscending" class="search-result__item item">
       <img class="item__main-img" src="{{item.snippet.thumbnails.high.url}}" alt="template">
 
       <div class="item__activity activity">
