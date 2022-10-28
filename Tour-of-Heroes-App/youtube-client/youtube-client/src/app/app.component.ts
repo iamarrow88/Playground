@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {SearchResultsComponent} from "./search-results/search-results.component";
+import {SearchResultsComponent} from "./youtube/components/search-results/search-results.component";
 
 @Component({
   selector: 'app-root',

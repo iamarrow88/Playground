@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {videoItem} from "../../models/interfaces";
+import {videoItem} from "../../../../models/interfaces";
 
 @Pipe({
   name: 'search'

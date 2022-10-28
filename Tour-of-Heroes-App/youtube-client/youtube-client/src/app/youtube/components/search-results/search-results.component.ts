@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import {youTubeResponse} from "../../models/interfaces";
+import {youTubeResponse} from "../../../../models/interfaces";
 
 @Component({
   selector: 'app-search-results',
