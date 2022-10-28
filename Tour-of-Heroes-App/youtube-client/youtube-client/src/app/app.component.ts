@@ -40,8 +40,13 @@ export class AppComponent{
 
   activeSortLink(e: Event) {
     const element = e.target as HTMLElement;
-    document.querySelectorAll('.open-settings__options').forEach(element => element.classList.remove('active-sort-link'));
-    element.classList.toggle("active-sort-link");
+    if(element.tagName === 'INPUT') {
+      document.querySelectorAll('.open-settings__options').forEach(element => element.classList.remove('active-sort-link'));
+      document.querySelector('.link-header')?.classList.add('.active-sort-link');
+    } else {
+      document.querySelectorAll('.open-settings__options').forEach(element => element.classList.remove('active-sort-link'));
+      element.classList.toggle("active-sort-link");
+    }
   }
 
   sortByDate(e: Event){
@@ -70,8 +75,9 @@ export class AppComponent{
 /*    return resArray;*/
   }
 
-  sortByKeyWords() {
+  sortByKeyWords(e: Event) {
     this.searchWay = 'keyWords';
+    this.activeSortLink(e);
   /*  const titles: string[]|undefined = this.searchResultComponent?.data.items.map(element => element.snippet.title);
     console.log(titles);
     const arrayOfResultIndexes = [];

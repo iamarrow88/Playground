@@ -29,7 +29,7 @@ export class SearchPipe implements PipeTransform {
         }
       } else {
         console.log('pass searchWay. it\'s key words');
-        return value.filter(video => video.snippet.localized.title.includes(mainSearchKey))
+        return value.filter(video => video.snippet.localized.title.toLowerCase().includes(mainSearchKey.toLowerCase()))
       }
     } else {
       console.log('pass isSettingsOpen. it\'s false');

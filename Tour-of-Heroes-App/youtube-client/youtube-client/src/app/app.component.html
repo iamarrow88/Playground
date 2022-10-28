@@ -25,8 +25,8 @@
       <span class="open-settings__text">Sorting by:</span>
       <a class="open-settings__options" href="#" (click)="sortByDate($event)">date</a>
       <a class="open-settings__options" href="#" (click)="sortByViews($event)">count of views</a>
-      <a class="open-settings__options" href="#" (click)="activeSortLink($event)">by word or sentance</a>
-      <input class="open-settings__option-input" type="text" *ngIf="true" [(ngModel)]="subSearchKey" (input)="sortByKeyWords()">
+      <a class="open-settings__options link-header" href="#" (click)="activeSortLink($event)">by word or sentance</a>
+      <input class="open-settings__option-input" type="text" *ngIf="true" [(ngModel)]="subSearchKey" (input)="sortByKeyWords($event)">
     </div>
   </div>
 
