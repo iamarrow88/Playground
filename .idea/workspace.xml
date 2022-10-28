@@ -26,7 +26,7 @@
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Nana/FrontEnd/PPPProjects/playground/Tour-of-Heroes-App/src/app",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Nana\\FrontEnd\\PPPProjects\\playground\\Tour-of-Heroes-App\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.1.1\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -43,7 +43,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666948526458</updated>
-      <workItem from="1666948531344" duration="5073000" />
+      <workItem from="1666948531344" duration="5428000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: change project structure">
       <created>1666950009084</created>
