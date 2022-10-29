@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13061e7b-8f69-4074-8826-a61178f12cd3" name="Changes" comment="init: initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/playground.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-messenger/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular-messenger/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-messenger/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angular-messenger/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-messenger/src/app/app.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/angular-messenger/src/app/app.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-messenger/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-messenger/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-messenger/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-messenger/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-messenger/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/angular-messenger/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-messenger/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/angular-messenger/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-messenger/src/test.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,12 +36,16 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Nana/FrontEnd/PPPProjects/playground/Tour-of-Heroes-App/src/app&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.1.1\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Nana\\FrontEnd\\PPPProjects\\playground\\angular-messenger\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Nana\FrontEnd\PPPProjects\playground\angular-messenger\src\app\shared\pipes" />
+      <recent name="C:\Nana\FrontEnd\PPPProjects\playground\angular-messenger\src\app\shared\directives" />
+      <recent name="C:\Nana\FrontEnd\PPPProjects\playground\angular-messenger\src\app\shared" />
       <recent name="C:\Nana\FrontEnd\PPPProjects\playground\angular-messenger\src\app" />
       <recent name="C:\Nana\FrontEnd\PPPProjects\playground\Tour-of-Heroes-App\src\app\services" />
     </key>
@@ -52,6 +60,10 @@
       <updated>1666948526458</updated>
       <workItem from="1666948531344" duration="5839000" />
       <workItem from="1666989003496" duration="488000" />
+      <workItem from="1666989506283" duration="1055000" />
+      <workItem from="1666990588997" duration="4661000" />
+      <workItem from="1667033876518" duration="5195000" />
+      <workItem from="1667039291555" duration="7476000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: change project structure">
       <created>1666950009084</created>
@@ -67,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666988176162</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="init: initial commit">
+      <created>1666989871184</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1666989871184</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,5 +107,27 @@
     <MESSAGE value="refactor: change project structure" />
     <MESSAGE value="init: initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="init: initial commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/angular-messenger/src/mocks/conversation-list.mock.ts</url>
+          <line>47</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/angular-messenger/src/mocks/conversation-list.mock.ts</url>
+          <line>69</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/angular-messenger/src/mocks/conversation-list.mock.ts</url>
+          <line>3</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

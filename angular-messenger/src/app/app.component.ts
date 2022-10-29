@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, Output} from '@angular/core';
+import { selectedConversationsMock } from './../mocks/selected-conversations.mock'
+import {SelectedConversationModel} from "../models/conversation.model";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'angular-messenger';
+  @Output() selectedConversation: SelectedConversationModel | null = null;
+  allConversations: SelectedConversationModel[] = selectedConversationsMock;
 }
