@@ -1,0 +1,23 @@
+.selected-user {
+  width: 100%;
+  padding: 0 15px;
+  min-height: 64px;
+  line-height: 64px;
+  border-bottom: 1px solid #e6ecf3;
+  -webkit-border-radius: 0 3px 0 0;
+  -moz-border-radius: 0 3px 0 0;
+  border-radius: 0 3px 0 0;
+
+  span {
+    line-height: 100%;
+
+    &.name {
+      font-weight: 700;
+    }
+  }
+}
+.chat-container {
+  position: relative;
+  padding: 1rem;
+}
+
