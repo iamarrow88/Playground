@@ -1,42 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13061e7b-8f69-4074-8826-a61178f12cd3" name="Changes" comment="feat: add user's selecting">
-      <change afterPath="$PROJECT_DIR$/.idea/leetcode/statistics.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/.vscode/extensions.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/.vscode/launch.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/.vscode/tasks.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/app/components/chat-message/chat-message.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/app/components/chat-message/chat-message.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/app/components/chat-message/chat-message.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/app/components/chat/chat.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/app/components/chat/chat.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/app/components/chat/chat.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/app/components/chats-list/chats-list.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/app/components/chats-list/chats-list.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/app/components/chats-list/chats-list.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/app/services/select-chat.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/app/shared/directives/status.directive.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/app/shared/pipes/search.pipe.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/assets/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/assets/css/fontawesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/assets/img/avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/assets/webfonts/fa-brands-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/assets/webfonts/fa-brands-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/assets/webfonts/fa-regular-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/assets/webfonts/fa-regular-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/assets/webfonts/fa-solid-900.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/assets/webfonts/fa-solid-900.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/assets/webfonts/fa-v4compatibility.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/assets/webfonts/fa-v4compatibility.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/mocks/conversation-list.mock.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/mocks/current-user.mock.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/mocks/selected-conversations.mock.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/models/conversation.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/models/message.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angular-messenger/src/models/user.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="13061e7b-8f69-4074-8826-a61178f12cd3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
