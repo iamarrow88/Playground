@@ -2,7 +2,10 @@
   <h1>JS Blog</h1>
   <div class="container">
   <post-form @create="addPost"></post-form>
-  <post-list :posts="posts"></post-list>
+  <post-list :posts="posts" @remove="removePost"></post-list> <!--2. заэмиченное событие прослушиваем
+  на родителе, в котором лежи дочерний элемент, коорый это событие создал
+  3. прослушиваем конкретное событие, которое создал дочерний элемент,
+  определяем функцию, которая его обработает-->
 
   </div>
 </template>
@@ -37,6 +40,9 @@ import postList from "./components/postList.vue";
     methods: {
       addPost(post) {
         this.posts.push(post);
+      },
+      removePost(post) { //описываем функцию, которая должна сработать
+        this.posts = this.posts.filter(el => el.id !== post.id)
       }
     }
   }

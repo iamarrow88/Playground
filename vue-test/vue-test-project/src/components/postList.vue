@@ -1,20 +1,23 @@
 <template>
-  <div class="post" v-for="post in posts" id="{{post.id}}">
-    <div class="post-box">
-      <h3 class="post-title"><strong>Название: </strong>{{post.title}}</h3>
-      <div class="post-text"><strong>Пост: </strong>{{post.body}}</div>
-    </div>
+  <div class="post"
+       v-for="post in posts"
+       id="{{post.id}}"
+       :key="post.id">
+    <post-item :post="post"></post-item>
     <div class="post-btns">
-      <my-button>Delete</my-button>
+      <my-button @click="$emit('remove', post)">Delete</my-button> <!--1.так как мы получаем список
+      постов в пропсах, то нам нужно прокинуть инф о посте, на котором кликнула удалить, выше
+      для этого эмитим событие remove и в качестве второго арг передаем сам пост родителю-->
     </div>
   </div>
 </template>
 
 <script>
-import MyButton from "./UI/MyButton.vue";
+
+import PostItem from "./postItem.vue";
 
 export default {
-  components: {MyButton},
+  components: {PostItem},
   props: {
     posts: {
       type: Array,
@@ -38,13 +41,5 @@ export default {
   align-items: center;
   border: 2px solid teal;
   max-width: 1000px;
-}
-
-.post-box {
-  max-width: 80%;
-}
-
-.post-text {
-  margin-top: 10px;
 }
 </style>
