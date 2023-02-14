@@ -1,7 +1,8 @@
 <template>
   <form @submit.prevent>
     <h2 class="form-title">Add new post</h2>
-    // v-model - двустороннее связывание, просто указываем модель компонента, с которой будет связывание
+<!--     v-model - двустороннее связывание, просто указываем модель компонента,
+    с которой будет связывание-->
     <input class="input"
            v-model="post.title"
            type="text"
@@ -10,14 +11,16 @@
            v-model="post.body"
            type="text"
            placeholder="Your story">
-    <button class="btn"
-            type="submit"
-            @click="addPost">Add post!</button>
+    <my-button class="mt15" @click="addPost">Add post!</my-button>
   </form>
 </template>
 
 <script>
+import MyButton from "./UI/MyButton.vue";
 export default {
+  components: {
+    MyButton
+  },
   name: "postForm",
   data() {
     return {
@@ -56,11 +59,8 @@ input {
   font-size: 20px;
 }
 
-.btn {
+.mt15 {
   margin-top: 15px;
-  align-self: end;
-  background-color: transparent;
-  width: 150px;
-  height: 50px;
 }
+
 </style>
