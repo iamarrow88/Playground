@@ -1,8 +1,7 @@
 <template>
   <h1>JS Blog</h1>
   <div class="container">
-  <post-form @create="addPost"></post-form> <!--2. подписываемся на событие из дочернего компонента,
-    определяем функцию, которая его будет обрабатывать-->
+  <post-form @create="addPost"></post-form>
   <post-list :posts="posts"></post-list>
 
   </div>
@@ -36,8 +35,7 @@ import postList from "./components/postList.vue";
       }
     },
     methods: {
-      addPost(post) { /*3. пишем, что делает функция при срабатывании события,
-      аргумент - то, что было передано из дочернего компонента*/
+      addPost(post) {
         this.posts.push(post);
       }
     }

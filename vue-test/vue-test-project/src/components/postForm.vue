@@ -1,26 +1,20 @@
 <template>
   <form @submit.prevent>
     <h2 class="form-title">Add new post</h2>
-<!--     v-model - двустороннее связывание, просто указываем модель компонента,
-    с которой будет связывание-->
-    <input class="input"
-           v-model="post.title"
-           type="text"
-           placeholder="Title of your post">
-    <input class="input"
-           v-model="post.body"
-           type="text"
-           placeholder="Your story">
+<!-- 6. в дочернем компоненте двусторонне связываем нужное поле из
+    даты род компонента, данные которой обновляются как раз после
+    получения эмитированного события от дочернего элемента с данными из инпута-->
+    <my-input type="text" v-model="post.title"
+           placeholder="Title of your post" />
+    <my-input type="text" placeholder="Your story"
+              v-model="post.body"
+    />
     <my-button class="mt15" @click="addPost">Add post!</my-button>
   </form>
 </template>
 
 <script>
-import MyButton from "./UI/MyButton.vue";
 export default {
-  components: {
-    MyButton
-  },
   name: "postForm",
   data() {
     return {
@@ -28,13 +22,13 @@ export default {
         id: '',
         title: '',
         body: ''
-      }
+      },
     }
   },
   methods: {
     addPost() {
       this.post.id = Date.now();
-      this.$emit('create', this.post); // 1.создаем событие. первый аргумент - его название, второй - что передаем с нем
+      this.$emit('create', this.post);
       this.post = {
         title: '',
         body: ''
