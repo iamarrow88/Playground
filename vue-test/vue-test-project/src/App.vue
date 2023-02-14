@@ -2,13 +2,18 @@
   <h1>JS Blog</h1>
   <div class="container">
   <post-form @create="addPost"></post-form>
-  <post-list :posts="posts" @remove="removePost"></post-list> <!--2. заэмиченное событие прослушиваем
-  на родителе, в котором лежи дочерний элемент, коорый это событие создал
+  <post-list v-if="posts.length > 0" :posts=posts @remove="removePost"></post-list> <!--2. заэмиченное событие прослушиваем
+  на родителе, в котором лежи дочерний элемент, который это событие создал
   3. прослушиваем конкретное событие, которое создал дочерний элемент,
   определяем функцию, которая его обработает-->
-
+  <div v-else>
+    <h3>Nothing to read</h3>
+  </div>
   </div>
 </template>
+
+<!--также есть директива v-show, которая показывает блок, если условия выполняется.
+в случае v-if если условия не выполнено, то элемента не будет в дом дереве, он не будет отрисован-->
 
 <script>
 import postForm from "./components/postForm.vue";
