@@ -1,16 +1,15 @@
 <template>
   <form @submit.prevent>
     <h2 class="form-title">Add new post</h2>
+    // v-model - двустороннее связывание, просто указываем модель компонента, с которой будет связывание
     <input class="input"
-           v-bind:value="this.title"
+           v-model="post.title"
            type="text"
-           placeholder="Title of your post"
-           @change="title = $event.target.value">
+           placeholder="Title of your post">
     <input class="input"
-           v-bind:value="this.body"
+           v-model="post.body"
            type="text"
-           placeholder="Your story"
-           @change="body = $event.target.value">
+           placeholder="Your story">
     <button class="btn"
             type="submit"
             @click="addPost">Add post!</button>
@@ -19,7 +18,26 @@
 
 <script>
 export default {
-  name: "postForm"
+  name: "postForm",
+  data() {
+    return {
+      post: {
+        id: '',
+        title: '',
+        body: ''
+      }
+    }
+  },
+  methods: {
+    addPost() {
+      this.post.id = Date.now();
+      this.$emit('create', this.post); // 1.создаем событие. первый аргумент - его название, второй - что передаем с нем
+      this.post = {
+        title: '',
+        body: ''
+      }
+    }
+  }
 }
 </script>
 

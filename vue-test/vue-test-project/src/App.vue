@@ -1,14 +1,14 @@
 <template>
   <h1>JS Blog</h1>
   <div class="container">
-  <post-form></post-form> <!--2. добавляем их в разметку компонента-родителя-->
-  <post-list v-bind:posts="posts"></post-list> <!--4. передаем пропсы из родителя к ребенку через v-bind-->
+  <post-form @create="addPost"></post-form> //2. подписываемся на событие из дочернего компонента, определяем функцию, которая его будет обрабатывать
+  <post-list :posts="posts"></post-list>
 
   </div>
 </template>
 
 <script>
-import postForm from "./components/postForm.vue"; //1.импортируем нужные компоненты
+import postForm from "./components/postForm.vue";
 import postList from "./components/postList.vue";
   export default {
     components: {
@@ -32,21 +32,11 @@ import postList from "./components/postList.vue";
           {id: 4, title: 'JS 5', body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa id natus nesciunt pariatur perspiciatis\n' +
                 '    quam rem sed ut voluptatibus! Alias aliquid consequatur ducimus illum laboriosam natus officia optio voluptatibus.'},
         ],
-        title: '',
-        body: '',
       }
     },
     methods: {
-      addPost() {
-        const newPost = {
-          id: new Date().getTime(),
-          title: this.title,
-          body: this.body,
-        }
-
-        this.posts.push(newPost);
-        this.title = '';
-        this.body = '';
+      addPost(post) { //3. пишем, что делает функция при срабатывании события, аргумент - то, что было передано из дочернего компонента
+        this.posts.push(post);
       }
     }
   }

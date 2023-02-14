@@ -6,11 +6,11 @@
 </template>
 
 <script>
-export default { /*3. для передачи данных из родителя используются пропсы, описываем их*/
+export default {
   props: {
-    posts: { //подробное описание элемента в пропсах
-      type: Array, //его тип
-      required: true //является ли он необходимым
+    posts: {
+      type: Array,
+      required: true
     }
   },
   data() {
