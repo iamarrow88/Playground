@@ -4,11 +4,12 @@
 <!-- 6. в дочернем компоненте двусторонне связываем нужное поле из
     даты род компонента, данные которой обновляются как раз после
     получения эмитированного события от дочернего элемента с данными из инпута-->
-    <my-input type="text" v-model="post.title"
+    <my-input type="text" v-model:value="post.title"
            placeholder="Title of your post" />
     <my-input type="text" placeholder="Your story"
-              v-model="post.body"
-    />
+              v-model:value="post.body"
+    /> <!-- в v-model:value прописываем, к какому атрибуту дочернего компонента
+    мы хотим приязать двусторонне этот импут-->
     <my-button class="mt15" @click="addPost">Add post!</my-button>
   </form>
 </template>
