@@ -20,5 +20,6 @@ export default {
   width: 150px;
   height: 50px;
   border: 2px solid teal;
+  cursor: pointer;
 }
 </style>
