@@ -1,33 +1,20 @@
 <template>
   <h1>JS Blog</h1>
   <div class="container">
-    <form @submit.prevent> //останавливает действие браузера по умолчанию
-      <h2 class="form-title">Add new post</h2>
-      <input class="input"
-             v-bind:value="this.title"
-             type="text"
-             placeholder="Title of your post"
-             @change="title = $event.target.value"> <!--в тайтл сразу присваивает значение поля вэлью из целевого элемента-->
-      <input class="input"
-             v-bind:value="this.body"
-             type="text"
-             placeholder="Your story"
-             @change="body = $event.target.value"> <!--связывает отображение и модель в одну сторону - от отображения к модели-->
-      <!-- v-bind связывает модель компонента и его графическое отображение (от модели к отображению в одну сторону)-->
-      <button class="btn"
-              type="submit"
-              @click="addPost">Add post!</button>
-    </form>
-    <div class="post" v-for="post in posts" id="{{post.id}}">
-      <h3 class="post-title"><strong>Название: </strong>{{post.title}}</h3>
-      <div class="post-text"><strong>Пост: </strong>{{post.body}}</div>
-    </div>
+  <post-form></post-form> <!--2. добавляем их в разметку компонента-родителя-->
+  <post-list v-bind:posts="posts"></post-list> <!--4. передаем пропсы из родителя к ребенку через v-bind-->
+
   </div>
 </template>
 
 <script>
-  export default { //скрипт всегда содержит export default и возвращает объект
-    data() { //функция дата содержит (возвращает) модели
+import postForm from "./components/postForm.vue"; //1.импортируем нужные компоненты
+import postList from "./components/postList.vue";
+  export default {
+    components: {
+      postForm, postList
+    },
+    data() {
       return {
         posts: [
           {id: 0, title: 'JS 1', body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa id natus nesciunt pariatur perspiciatis\n' +
@@ -49,7 +36,7 @@
         body: '',
       }
     },
-    methods: { //объект методы содержит методы компонента (без function)
+    methods: {
       addPost() {
         const newPost = {
           id: new Date().getTime(),
@@ -65,7 +52,7 @@
   }
 </script>
 
-<style> /*содержит стили компонента*/
+<style>
   * {
     margin: 0;
     padding: 0;
@@ -80,38 +67,5 @@ h1 {
   margin: 0 auto;
   padding: 20px;
   max-width: 1000px;
-}
-
-.post {
-  margin-top: 15px;
-  padding: 10px;
-  border: 2px solid teal;
-  max-width: 1000px;
-}
-
-.post-text {
-  margin-top: 10px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  padding: 14px;
-  width: 100%;
-}
-
-input {
-  margin-top: 15px;
-  width: 100%;
-  height: 35px;
-  font-size: 20px;
-}
-
-.btn {
-  margin-top: 15px;
-  align-self: end;
-  background-color: transparent;
-  width: 150px;
-  height: 50px;
 }
 </style>
