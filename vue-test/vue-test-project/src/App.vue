@@ -1,25 +1,30 @@
 <template>
   <h1>JS Blog</h1>
   <div class="container">
-  <post-form @create="addPost"></post-form>
-  <post-list v-if="posts.length > 0" :posts=posts @remove="removePost"></post-list> <!--2. заэмиченное событие прослушиваем
-  на родителе, в котором лежи дочерний элемент, который это событие создал
-  3. прослушиваем конкретное событие, которое создал дочерний элемент,
-  определяем функцию, которая его обработает-->
+  <my-dialog @changeShown="shown=false" v-if="shown">
+    <post-form @create="addPost"></post-form>
+  </my-dialog>
+  <div class="add-post">
+    <my-button @click="shown=true">Add Post</my-button>
+  </div>
+  <post-list v-if="posts.length > 0" :posts=posts @remove="removePost"></post-list>
   <div v-else>
     <h3>Nothing to read</h3>
   </div>
   </div>
 </template>
 
-<!--также есть директива v-show, которая показывает блок, если условия выполняется.
-в случае v-if если условия не выполнено, то элемента не будет в дом дереве, он не будет отрисован-->
-
 <script>
 import postForm from "./components/postForm.vue";
 import postList from "./components/postList.vue";
+import MyDialog from "./components/UI/MyDialog.vue";
+import MyInput from "./components/UI/MyInput.vue";
+import MyButton from "./components/UI/MyButton.vue";
   export default {
     components: {
+      MyButton,
+      MyInput,
+      MyDialog,
       postForm, postList
     },
     data() {
@@ -40,13 +45,14 @@ import postList from "./components/postList.vue";
           {id: 4, title: 'JS 5', body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa id natus nesciunt pariatur perspiciatis\n' +
                 '    quam rem sed ut voluptatibus! Alias aliquid consequatur ducimus illum laboriosam natus officia optio voluptatibus.'},
         ],
+        shown: false
       }
     },
     methods: {
       addPost(post) {
         this.posts.push(post);
       },
-      removePost(post) { //описываем функцию, которая должна сработать
+      removePost(post) {
         this.posts = this.posts.filter(el => el.id !== post.id)
       }
     }

@@ -5,9 +5,7 @@
        :key="post.id">
     <post-item :post="post"></post-item>
     <div class="post-btns">
-      <my-button @click="$emit('remove', post)">Delete</my-button> <!--1.так как мы получаем список
-      постов в пропсах, то нам нужно прокинуть инф о посте, на котором кликнула удалить, выше
-      для этого эмитим событие remove и в качестве второго арг передаем сам пост родителю-->
+      <my-button @click="$emit('remove', post)">Delete</my-button>
     </div>
   </div>
 </template>
