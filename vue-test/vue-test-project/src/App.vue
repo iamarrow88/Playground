@@ -1,16 +1,23 @@
 <template>
   <h1>JS Blog</h1>
   <div class="container">
+    <my-button @click="getPosts">Get posts</my-button>
   <my-dialog @changeShown="shown=false" v-if="shown">
     <post-form @create="addPost"></post-form>
   </my-dialog>
   <div class="add-post">
     <my-button @click="shown=true">Add Post</my-button>
   </div>
-  <post-list v-if="posts.length > 0" :posts=posts @remove="removePost"></post-list>
-  <div v-else>
-    <h3>Nothing to read</h3>
-  </div>
+    <div v-if="!isPostsLoading">
+      <post-list v-if="posts.length > 0" :posts=posts @remove="removePost"></post-list>
+      <div v-else>
+        <h3>Nothing to read</h3>
+      </div>
+    </div>
+    <div v-else>
+      Posts are loading...
+    </div>
+
   </div>
 </template>
 
@@ -20,6 +27,7 @@ import postList from "./components/postList.vue";
 import MyDialog from "./components/UI/MyDialog.vue";
 import MyInput from "./components/UI/MyInput.vue";
 import MyButton from "./components/UI/MyButton.vue";
+import axios from "axios";
   export default {
     components: {
       MyButton,
@@ -29,23 +37,9 @@ import MyButton from "./components/UI/MyButton.vue";
     },
     data() {
       return {
-        posts: [
-          {id: 0, title: 'JS 1', body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa id natus nesciunt pariatur perspiciatis\n' +
-                '    quam rem sed ut voluptatibus! Alias aliquid consequatur ducimus illum laboriosam natus officia optio voluptatibus.'},
-          {id: 1, title: 'JS 2', body: 'Asperiores at atque consectetur culpa cupiditate dignissimos dolorem doloremque expedita illum magnam nesciunt\n' +
-                '    non odit, pariatur provident quibusdam rerum temporibus ullam vitae voluptas, voluptatum. Amet illo nihil quo\n' +
-                '    voluptatum. Error?\n' +
-                '    quam rem sed ut voluptatibus! Alias aliquid consequatur ducimus illum laboriosam natus officia optio voluptatibus.'},
-          {id: 2, title: 'JS 3', body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa id natus nesciunt pariatur perspiciatis\n' +
-                '    quam rem sed ut voluptatibus! Alias aliquid consequatur ducimus illum laboriosam natus officia optio voluptatibus.'},
-          {id: 3, title: 'JS 4', body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa id natus nesciunt pariatur perspiciatis\n' +
-                '    Asperiores at atque consectetur culpa cupiditate dignissimos dolorem doloremque expedita illum magnam nesciunt\n' +
-                '    non odit, pariatur provident quibusdam rerum temporibus ullam vitae voluptas, voluptatum. Amet illo nihil quo\n' +
-                '    voluptatum. Error?.'},
-          {id: 4, title: 'JS 5', body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa id natus nesciunt pariatur perspiciatis\n' +
-                '    quam rem sed ut voluptatibus! Alias aliquid consequatur ducimus illum laboriosam natus officia optio voluptatibus.'},
-        ],
-        shown: false
+        posts: [],
+        shown: false,
+        isPostsLoading: false,
       }
     },
     methods: {
@@ -54,7 +48,24 @@ import MyButton from "./components/UI/MyButton.vue";
       },
       removePost(post) {
         this.posts = this.posts.filter(el => el.id !== post.id)
-      }
+      },
+      async getPosts() {
+        try {
+          this.isPostsLoading = true;
+           const result = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10')
+              this.posts = result.data;
+
+        } catch (e) {
+          console.log(e);
+        } finally {
+          this.isPostsLoading = false;
+        }
+      },
+
+
+    },
+    mounted() {
+      this.getPosts();
     }
   }
 </script>
