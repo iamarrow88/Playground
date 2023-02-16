@@ -1,5 +1,6 @@
 <template>
   <div class="post-box">
+    <div>{{post.id}}</div>
     <h3 class="post-title"><strong>Название: </strong>{{post.title}}</h3>
     <div class="post-text"><strong>Пост: </strong>{{post.body}}</div>
   </div>
