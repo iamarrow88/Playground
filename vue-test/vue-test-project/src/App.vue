@@ -88,7 +88,7 @@ import MySelect from "./components/UI/MySelect.vue";
         }
       },
       searchedAndSortedPosts(){ //3. также в компьютед описываем функцию, которая
-        //будет что-то делать в массивом и возвращать результат
+        //будет что-то делать с массивом и возвращать результат
         return this.sortedPosts.filter(post => post.title.toLowerCase().includes(this.keyToSearch.toLowerCase()))
       }
     }
