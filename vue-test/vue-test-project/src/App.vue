@@ -80,8 +80,13 @@ import MySelect from "./components/UI/MySelect.vue";
     9. создали watch (отслеживает изменение значения модели. название такое же, как у
     отслеживаемой модели!
     10.описываем, что нужно делать, когда значение модели изменено*/
-      selectedSort(newValue) {
-        return this.posts.sort((post1, post2) => post1[newValue].localeCompare(post2[newValue]))
+
+      post: {
+        handler(newValue) {//принимает новое значение отслеживаемой модели
+          return this.posts.sort((post1, post2) => post1[newValue]
+              .localeCompare(post2[newValue]));
+        },
+        deep: true
       }
     }
   }

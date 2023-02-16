@@ -5,7 +5,7 @@
            placeholder="Title of your post" />
     <my-input type="text" placeholder="Your story"
               v-model:value.trim="post.body"
-    /> <!--модификаторы для v-model (trim|lazy|number и тп.) -->
+    />
     <my-button class="mt15" @click="addPost">Add post!</my-button>
   </form>
 </template>
@@ -30,6 +30,14 @@ export default {
         title: '',
         body: ''
       }
+    }
+  },
+  watch: { // отслеживаем глубокие изменения (в полях формы при создании поста)
+    post: { //1. какая именно модель отслеживается
+      handler() {// сама функция принимает новое значение отслеживаемой модели
+        console.log(this.post.title) //2. что делать
+      },
+      deep: true // 2.индикатор deep: true для отслеживания вложенных полей в модели
     }
   }
 }
