@@ -1,5 +1,5 @@
 <template>
-  <transition-group name="posts-list"> <!--1.обернуть нужный элемент в спец тег (см документацию)-->
+  <transition-group name="posts-list">
     <div class="post"
          v-for="post in posts"
          :id="post.id"
@@ -42,8 +42,6 @@ export default {
   border: 2px solid teal;
   max-width: 1000px;
 }
-/*2 добавить спец стили (см документацию. первая часть названия класса - это name из спец тега,
- вторая часть - специальное фиксированное название*/
 .posts-list-item {
   display: inline-block;
   margin-right: 10px;

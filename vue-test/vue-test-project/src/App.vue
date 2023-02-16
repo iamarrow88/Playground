@@ -5,15 +5,12 @@
       <post-form @create="addPost"></post-form>
     </my-dialog>
     <my-input v-model:value="keyToSearch"
-              placeholder="Search..." /> <!--1. поиск. добавляем в инпут
-              v-model:value="keyToSearch" - модель, где будет храниться
-              ключевое слово для поиска-->
+              placeholder="Search..." />
     <div class="add-post">
       <my-button @click="shown=true">Add Post</my-button>
       <my-select :options="options" v-model="selectedSort"></my-select>
     </div>
-    <div v-if="!isPostsLoading"> <!--3. этот результат передаем в дочерний элемент
-                                  для отрисовки-->
+    <div v-if="!isPostsLoading">
       <post-list v-if="posts.length > 0" :posts=searchedAndSortedPosts @remove="removePost"></post-list>
       <div v-else>
         <h3>Nothing to read</h3>
@@ -87,8 +84,7 @@ import MySelect from "./components/UI/MySelect.vue";
           return [...this.posts].sort((post1, post2) => post1[this.selectedSort].localeCompare(post2[this.selectedSort]))
         }
       },
-      searchedAndSortedPosts(){ //3. также в компьютед описываем функцию, которая
-        //будет что-то делать с массивом и возвращать результат
+      searchedAndSortedPosts(){
         return this.sortedPosts.filter(post => post.title.toLowerCase().includes(this.keyToSearch.toLowerCase()))
       }
     }
