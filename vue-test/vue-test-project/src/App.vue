@@ -19,21 +19,7 @@
     <div v-else>
       Posts are loading...
     </div>
-
-    <div class="pages">
-<!--Ручная пагинация:
- 1. в v-for можно указывать число, до которого будут генерироваться элементы
- 2. в функцию, срабатывающую при клике, можно передать аргумент
- 3. можно байндить класс при определенном условии (:claas="{
- 'название класса': условие, при выполнении которого он будет навешиваться}"
- также можно делать и со стилями-->
-      <div class="pag-btn"
-           v-for="pageNumber in allPages"
-           @click="changePage(pageNumber)"
-      :class="{
-          'current-page': page === pageNumber
-           }">{{pageNumber}}</div>
-    </div>
+    <div ref="observer" class="observer"></div><!--1.создали блок для отслеживания конца страницы-->
   </div>
 </template>
 
@@ -87,7 +73,6 @@ import MySelect from "./components/UI/MySelect.vue";
              }
            });
            this.allPages = Math.ceil(result.headers['x-total-count'] / this.limit);
-           console.log(this.allPages);
            this.posts = result.data;
 
         } catch (e) {
@@ -96,12 +81,40 @@ import MySelect from "./components/UI/MySelect.vue";
           this.isPostsLoading = false;
         }
       },
-      changePage(pageNumber) {
-        this.page = pageNumber;
+      async newPostsLoading() {
+        try {
+          this.page += 1;
+          const result = await axios.get('https://jsonplaceholder.typicode.com/posts?', {
+            params: {
+              _limit: this.limit,
+              _page: this.page
+            }
+          });
+          this.allPages = Math.ceil(result.headers['x-total-count'] / this.limit);
+          this.posts = [...this.posts, ...result.data]; /*7. добавляем к текущим постам еще и результат запроса*/
+
+        } catch (e) {
+          console.log(e);
+        }
       },
     },
     mounted() {
       this.getPosts();
+      /*2.после монтирования компонента начинаем отслеживать пересечение блока. Для этого:*/
+      const options = {
+        rootMargin: '0px',
+        threshold: 1.0
+      }/*3. делаем конфиг Intersection Observer API*/
+      /*4. описываем коллбек, который должен сработать при пересечении объекта*/
+      const callback = (entries, observer) => {
+        if(entries[0].isIntersecting) {
+          /*5. entries[0].isIntersecting - true, если объект пересекли на "входе" в него*/
+          this.newPostsLoading();
+        }
+      }
+
+      const observer = new IntersectionObserver(callback, options); /*6ю создаем сущность обзервера*/
+      observer.observe(this.$refs.observer) /*6. рассказываем, за чем ему следить*/
     },
     computed: {
       sortedPosts() {
@@ -116,11 +129,6 @@ import MySelect from "./components/UI/MySelect.vue";
         return this.sortedPosts.filter(post => post.title.toLowerCase().includes(this.keyToSearch.toLowerCase()))
       }
     },
-    watch: {
-      page() {
-        this.getPosts();
-      }
-    }
   }
 </script>
 
@@ -144,19 +152,5 @@ h1 {
   display: flex;
   justify-content: space-between;
 }
-
-.pages {
-  margin: 0 auto;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  width: 60%;
-}
-.pag-btn {
-  border: 1px solid #000;
-  padding: 10px;
-}
-.current-page {
-  border: 2px solid teal;
 }
 </style>
