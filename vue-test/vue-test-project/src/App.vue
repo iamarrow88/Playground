@@ -49,6 +49,7 @@ import MySelect from "./components/UI/MySelect.vue";
         options: [
           {name: 'By Title', value: 'title', id: 0},
           {name: 'By Article', value: 'body', id: 1},
+          {name: 'By ID', value: 'id', id: 2},
         ],
         selectedSort: 'title',
         keyToSearch: '' //2. определяем ее в компоненте
@@ -79,7 +80,12 @@ import MySelect from "./components/UI/MySelect.vue";
     },
     computed: {
       sortedPosts() {
-        return [...this.posts].sort((post1, post2) => post1[this.selectedSort].localeCompare(post2[this.selectedSort]))
+        if(this.selectedSort === 'id') {
+          return [...this.posts].sort((post1, post2) => +post1[this.selectedSort] - +post2[this.selectedSort])
+
+        } else {
+          return [...this.posts].sort((post1, post2) => post1[this.selectedSort].localeCompare(post2[this.selectedSort]))
+        }
       },
       searchedAndSortedPosts(){ //3. также в компьютед описываем функцию, которая
         //будет что-то делать в массивом и возвращать результат
