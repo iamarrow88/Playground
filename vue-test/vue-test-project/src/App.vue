@@ -6,15 +6,9 @@
   </my-dialog>
   <div class="add-post">
     <my-button @click="shown=true">Add Post</my-button>
-    <my-select :options="options" v-model="selectedSort"></my-select> <!--6. вмонтировали выпадающий список
-    в родителя
-    7. связали v-modal родителя с полем, где будет храниться выбранный элемент списка
-    8.:options="options" - передали массив доступных вариантов в ребенка
-    -->
+    <my-select :options="options" v-model="selectedSort"></my-select>
   </div>
     <div v-if="!isPostsLoading">
-  <!-- 4. передали в  :posts=sortedPosts - название функции. таким образом будет вычислено
-      свойство и будет передано в дочерний компонент-->
       <post-list v-if="posts.length > 0" :posts=sortedPosts @remove="removePost"></post-list>
       <div v-else>
         <h3>Nothing to read</h3>
@@ -52,7 +46,7 @@ import MySelect from "./components/UI/MySelect.vue";
           {name: 'By Title', value: 'title', id: 0},
           {name: 'By Article', value: 'body', id: 1},
         ],
-        selectedSort: 'title' //3.в самом свойстве изначально должно быть какое-то значение
+        selectedSort: 'title'
       }
     },
     methods: {
@@ -78,10 +72,8 @@ import MySelect from "./components/UI/MySelect.vue";
     mounted() {
       this.getPosts();
     },
-    computed: { // 1.вычисляемое свойство - создаем функцию, которая будет вычислять
-      // некоторое свойство при каждом его изменении и передадим ее дочернему элементу для
-      //отрисовки
-      sortedPosts() { //2.название ф-ии любое
+    computed: {
+      sortedPosts() {
         return [...this.posts].sort((post1, post2) => post1[this.selectedSort].localeCompare(post2[this.selectedSort]))
       }
     }
