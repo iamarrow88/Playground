@@ -13,7 +13,9 @@
     -->
   </div>
     <div v-if="!isPostsLoading">
-      <post-list v-if="posts.length > 0" :posts=posts @remove="removePost"></post-list>
+  <!-- 4. передали в  :posts=sortedPosts - название функции. таким образом будет вычислено
+      свойство и будет передано в дочерний компонент-->
+      <post-list v-if="posts.length > 0" :posts=sortedPosts @remove="removePost"></post-list>
       <div v-else>
         <h3>Nothing to read</h3>
       </div>
@@ -50,7 +52,7 @@ import MySelect from "./components/UI/MySelect.vue";
           {name: 'By Title', value: 'title', id: 0},
           {name: 'By Article', value: 'body', id: 1},
         ],
-        selectedSort: ''
+        selectedSort: 'title' //3.в самом свойстве изначально должно быть какое-то значение
       }
     },
     methods: {
@@ -76,17 +78,11 @@ import MySelect from "./components/UI/MySelect.vue";
     mounted() {
       this.getPosts();
     },
-    watch: { /*
-    9. создали watch (отслеживает изменение значения модели. название такое же, как у
-    отслеживаемой модели!
-    10.описываем, что нужно делать, когда значение модели изменено*/
-
-      post: {
-        handler(newValue) {//принимает новое значение отслеживаемой модели
-          return this.posts.sort((post1, post2) => post1[newValue]
-              .localeCompare(post2[newValue]));
-        },
-        deep: true
+    computed: { // 1.вычисляемое свойство - создаем функцию, которая будет вычислять
+      // некоторое свойство при каждом его изменении и передадим ее дочернему элементу для
+      //отрисовки
+      sortedPosts() { //2.название ф-ии любое
+        return [...this.posts].sort((post1, post2) => post1[this.selectedSort].localeCompare(post2[this.selectedSort]))
       }
     }
   }
